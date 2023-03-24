@@ -1,0 +1,237 @@
+const char MAIN_page[] PROGMEM = R"=====(
+
+
+
+    <!--the header contains style of site, metadata (for seo e.c.t), and title-->
+    <head>
+        <title>Top House Scoring</title>
+
+        <!--style is writen usin css-->
+        <style>
+            #scoresbox
+            {
+                display: flex;
+                padding:10px;
+            }
+
+            #team
+            {
+                background-color: gainsboro;
+                margin:5px;
+                height: 100%;
+                width:50%;
+            }
+
+            #resetbox
+            {
+                text-align: center;
+                color:blue;
+            }
+
+            h1
+            {
+                text-align: center;
+                font-size: 64;
+                font-family: sans-serif;
+            }
+
+            input
+            {
+                text-align: center;
+                font-size: 60;
+                font-family: sans-serif;
+            }
+
+            h1.score
+            {
+                font-size: 128;
+            }
+
+            button
+            {
+                font-size:50;
+
+                border-radius: 10%;
+
+                margin:10px;
+            }
+
+            a
+            {
+                font-size:50;
+
+                border-radius: 10%;
+
+                margin:10px;
+            }
+
+            button:hover
+            {
+                background-color:red;
+                color:white;
+            }
+
+            button.sub
+            {
+                font-size:20;
+                height:50%;
+                margin-top:10px;
+            }
+
+            #resetall
+            {
+                font-size:20;
+                position: fixed;
+                bottom: 0;
+                right:45%;
+                width:10%;
+            }
+
+            #space
+            {
+                margin: 40px;
+            }
+
+
+            #controls
+            {
+                justify-content:center;
+                display:flex;
+            }
+
+
+        </style>
+    </head>
+
+
+    <!--the body contains all the elements for a website-->
+    <body>
+
+        <!--
+        a div is a container for elements, 
+        this is useful for inline stuff, 
+        divs can be given unique id's to 
+        corespod to specific css using the # symbol
+        -->
+        <div id="scoresbox">
+            <div id="team">
+                <div id = "name">
+                    <input placeholder="team 1 name here"></input>
+                </div>
+
+                <div id="score">
+                    <h1 id="score1" class="score">0</h1>
+                </div>
+
+                <div id="controls">
+                        <button id="contol" onclick="oneadd10()">+10</button>
+                        <button id="contol" onclick="onesub10()" class="sub">-10</button>
+                        <div id="space"> </div>
+                        <button id="contol" onclick="oneadd5()">+5</button>
+                        <button id="contol" onclick="onesub5()" class="sub">-5</button> 
+                </div>
+            </div>
+
+
+
+            <div id="team">
+                <div id = "name">
+                    <input placeholder="team 2 name here"></input>
+                </div>
+
+                <div id="score">
+                    <h1 id="score2" class="score">0</h1>
+                </div>
+
+                <div id="controls">
+                    <button id="contol" onclick="twoadd10()">+10</button>
+                    <button id="contol" onclick="twosub10()" class="sub">-10</button>
+                    <div id="space"> </div>
+                    <button id="contol" onclick="twoadd5()">+5</button>
+                    <button id="contol" onclick="twosub5()" class="sub">-5</button>
+                    
+                </div>
+            </div>
+
+        </div>
+
+        <div id="resetbox">
+		<br></br>
+		<br></br>
+            <a href="/H"> NEXT QUESTION</a>
+        </div>
+
+        <br></br>
+
+        <button class="reset" id="resetall" onclick="resetall()"> reset all</button>
+        
+    </body>
+
+
+    <!--the script is written using javascript-->
+    <script>
+
+        function reset()
+        {
+            window.location.href=window.location.href+"/H"
+        }
+
+        function resetall()
+        {
+            window.location.href=window.location.href
+        }
+
+        function oneadd10()
+        {
+            var score =+document.getElementById("score1").innerText
+            document.getElementById("score1").innerText=score+10
+        }
+
+        function oneadd5()
+        {
+            var score =+document.getElementById("score1").innerText
+            document.getElementById("score1").innerText=score+5
+        }
+
+        function onesub10()
+        {
+            var score =+document.getElementById("score1").innerText
+            document.getElementById("score1").innerText=score-10
+        }
+
+        function onesub5()
+        {
+            var score =+document.getElementById("score1").innerText
+            document.getElementById("score1").innerText=score-5
+        }
+
+
+        function twoadd10()
+        {
+            var score =+document.getElementById("score2").innerText
+            document.getElementById("score2").innerText=score+10
+        }
+
+        function twoadd5()
+        {
+            var score =+document.getElementById("score2").innerText
+            document.getElementById("score2").innerText=score+5
+        }
+
+        function twosub10()
+        {
+            var score =+document.getElementById("score2").innerText
+            document.getElementById("score2").innerText=score-10 
+        }
+
+        function twosub5()
+        {
+            var score =+document.getElementById("score2").innerText
+            document.getElementById("score2").innerText=score-5         
+        }
+
+    </script>
+
+
+
+)=====";
